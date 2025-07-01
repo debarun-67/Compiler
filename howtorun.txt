@@ -1,0 +1,34 @@
+epsilon
+
+gcc epsilon.c -o epsilon
+./epsilon
+
+
+lexical
+
+lex lecial.l
+gcc lex.yy.c -o lexical -lfl
+./lexical q4.c
+
+
+symbol table
+
+lex symtab.l
+gcc lex.yy.c -o symtab -lfl
+./symtab q4.c
+
+
+
+parser
+
+yacc -d parser.y
+lex parser.l
+gcc y.tab.c lex.yy.c -o parser -lfl
+./parser < q4.c
+
+
+
+intermediate code generator
+
+gcc intcodegen.c -o intcode
+./intcode < q4.c
